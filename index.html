@@ -34,25 +34,139 @@
                 />
             </div>
         </div>
+
+        <div class="add-item-container">
+            <form id="item-form">
+                <div class="new-item">
+                    <div class="form-container">
+                        <p class="new-item-label"> name </p>
+                        <div class="form-input input-tran-name">
+                            <input
+                                type="text"
+                                class="form-input"
+                                id="item-input"
+                                name="item"
+                                placeholder="Enter Item"
+                            />
+                        </div>
+                        <p class="new-item-label"> amount </p> 
+                        <div class="form-input input-tran-price">
+                            <input
+                                type="text"
+                                class="form-input"
+                                id="item-input"
+                                name="item"
+                                placeholder="Enter Item"
+                            />
+                        </div>
+                        <p class="new-item-label"> date </p>
+                        <div class="form-input input-tran-date">
+                            <input
+                                type="text"
+                                class="form-input"
+                                id="item-input"
+                                name="item"
+                                placeholder="Enter Item"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <button type="submit" class="btn">
+                      <i class="fa-solid fa-plus"></i> Add Item
+                    </button>
+                </div>
+            </form>
+        </div>
+
         <div class="transaction-history">
             <h1> Transaction History : </h1>
             <img src="images/tran-history-logo.png" style="width: 70px ; padding-left: 20px;" />
 
         </div>
-        <div class="filter-container">
-            <div class="filter">
-                <input
-                type="text"
-                class="filter-input"
-                id="item-input"
-                name="item"
-                placeholder="Filter"
-                />
-    
+
+        
+
+
+
+        <div class="properties-container">
+
+            <div class="filter-container">
+                <div class="filter">
+                    <input
+                    type="text"
+                    class="filter-input"
+                    id="item-input"
+                    name="item"
+                    placeholder="Filter"
+                    />
+                </div>
+            </div>
+
+            <div class="date-container">
+                <div class="date-picker date-picker-min">
+                    <input
+                    type="text"
+                    class="date-input"
+                    id="item-input"
+                    name="item"
+                    placeholder="##-##-####"
+                    />
+                </div>
+
+                <div class="date-input-seperator">
+                    <h2 style="text-align: center;"> - </h2>
+                </div>
+
+                <div class="date-picker date-picker-max">
+                    <input
+                    type="text"
+                    class="date-input"
+                    id="item-input"
+                    name="item"
+                    placeholder="##-##-####"
+                    />
+                </div>
+            </div>
         </div>
 
+        <ul id="item-list" class="items">
+            <li class="item">
+                <div class="item-container">
+                    <div class="tran tran-name">
+                        <p> 1shit </p>
+                    </div>
+                    <div class="tran tran-price">
+                        <p> 1pee </p>
+                    </div>
+                    <div class="tran tran-date">
+                        <p> 1shit </p>
+                    </div>
+                    <div class="tran tran-delete">
+                        <p> &#10005 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="item-container">
+                    <div class="tran tran-name">
+                        <p> 2shit </p>
+                    </div>
+                    <div class="tran tran-price">
+                        <p> 2pee </p>
+                    </div>
+                    <div class="tran tran-date">
+                        <p> 2shit </p>
+                    </div>
+                    <div class="tran tran-delete">
+                        <p> &#10005 </p>
+                    </div>
+                </div>
+            </li>
 
-    </di>
+        </ul>
+
+    </div>
     <script src="script.js"> </script>
 </body>
 </html>
