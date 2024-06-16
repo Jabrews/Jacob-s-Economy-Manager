@@ -179,7 +179,6 @@ li {
 
  .tran-name {
     border-right: black 5px solid;
-    border-left: black 5px solid;
 
  }
 
@@ -192,5 +191,5 @@ li {
  }
 
  .tran-delete {
-    border-right: black 5px solid;
+    
  }
