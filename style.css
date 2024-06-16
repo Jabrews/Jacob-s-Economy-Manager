@@ -40,7 +40,7 @@ header {
 }
 
 .form-input {
-    color: aliceblue;
+    color:  black;
     font-size: 100%;
     border: black 3px solid;
 }
@@ -90,6 +90,11 @@ header {
 
 .date-picker {
     font-size: 100%;
+    color: black;
+}
+
+.date-input {
+    color: black;
 }
 
  .date-input-seperator {
@@ -127,7 +132,7 @@ header {
 
 
 .form-input {
-    color: aliceblue;
+    color: black;
     font-size: 100%;
     border: black 3px solid;
 }

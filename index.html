@@ -4,36 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Jacob's Economy Calculator</title>
 </head>
 <body>
     <div class="container">
+
         <header>
             <h1>  Jacob's Economy Calculator  </h1>
             <img src="images/site-logo.png" style="width: 60px ; padding-left: 20px;"/>
         </header>
-        <div class="balance-container">
-            <h2> Avaliable-balance :</h2>
-            <div class="availble-balance">
-                <input
-                type="text"
-                class="form-input"
-                id="item-input"
-                name="item"
-                placeholder="No Money"
-                />
+
+        <form id="balance-form">
+            <div class="balance-container">
+                <h2> Avaliable-balance :</h2>
+                <h2 id="avaliable-balance"> 0 </h2>
+                <h2> Update-balance :</h2>
+                <div>
+                    <input
+                    type="text"
+                    class="form-input"
+                    id="update-balance"
+                    name="item"
+                    placeholder="$"
+                    />
+                </div>
             </div>
-            <h2> Update-balance :</h2>
-            <div class="Update-balance">
-                <input
-                type="text"
-                class="form-input"
-                id="item-input"
-                name="item"
-                placeholder="More Money"
-                />
-            </div>
-        </div>
+        </form>
 
         <div class="add-item-container">
             <form id="item-form">
@@ -44,7 +40,7 @@
                             <input
                                 type="text"
                                 class="form-input"
-                                id="item-input"
+                                id="new-item-name"
                                 name="item"
                                 placeholder="Enter Item"
                             />
@@ -54,17 +50,17 @@
                             <input
                                 type="text"
                                 class="form-input"
-                                id="item-input"
+                                id="new-item-amount"
                                 name="item"
-                                placeholder="Enter Item"
+                                placeholder="$"
                             />
                         </div>
                         <p class="new-item-label"> date </p>
                         <div class="form-input input-tran-date">
                             <input
-                                type="text"
+                                type="date"
                                 class="form-input"
-                                id="item-input"
+                                id="new-item-date"
                                 name="item"
                                 placeholder="Enter Item"
                             />
@@ -85,10 +81,6 @@
 
         </div>
 
-        
-
-
-
         <div class="properties-container">
 
             <div class="filter-container">
@@ -106,7 +98,7 @@
             <div class="date-container">
                 <div class="date-picker date-picker-min">
                     <input
-                    type="text"
+                    type="date"
                     class="date-input"
                     id="item-input"
                     name="item"
@@ -120,7 +112,7 @@
 
                 <div class="date-picker date-picker-max">
                     <input
-                    type="text"
+                    type="date"
                     class="date-input"
                     id="item-input"
                     name="item"
