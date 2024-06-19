@@ -88,7 +88,7 @@
                     <input
                     type="text"
                     class="filter-input"
-                    id="item-input"
+                    id="word-filter"
                     name="item"
                     placeholder="Filter"
                     />
@@ -99,21 +99,21 @@
                 <div class="date-picker date-picker-min">
                     <input
                     type="date"
-                    class="date-input"
+                    class="date-filter"
                     id="item-input"
                     name="item"
                     placeholder="##-##-####"
                     />
                 </div>
 
-                <div class="date-input-seperator">
+                <div class="date-input-seperator date-filter">
                     <h2 style="text-align: center;"> - </h2>
                 </div>
 
                 <div class="date-picker date-picker-max">
                     <input
                     type="date"
-                    class="date-input"
+                    class="date-filter"
                     id="item-input"
                     name="item"
                     placeholder="##-##-####"
@@ -123,7 +123,54 @@
         </div>
 
         <ul id="item-list" class="items">
-
+            <li class="item">
+                <div class="item-container">
+                    <div class="tran-name tran">
+                        <p>watermelon</p>
+                    </div>
+                    <div class="tran-price tran">
+                        <p>5</p>
+                    </div>
+                    <div class="tran-date tran">
+                        <p>2024-06-19</p>
+                    </div>
+                    <div class="tran">
+                        <p class="tran-delete">✕</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="item-container">
+                    <div class="tran-name tran">
+                        <p>new tire</p>
+                    </div>
+                    <div class="tran-price tran">
+                        <p>50</p>
+                    </div>
+                    <div class="tran-date tran">
+                        <p>2024-05-16</p>
+                    </div>
+                    <div class="tran">
+                        <p class="tran-delete">✕</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="item-container">
+                    <div class="tran-name tran">
+                        <p>starbucks</p>
+                    </div>
+                    <div class="tran-price tran">
+                        <p>10</p>
+                    </div>
+                    <div class="tran-date tran">
+                        <p>2024-04-05</p>
+                    </div>
+                    <div class="tran">
+                        <p class="tran-delete">✕</p>
+                    </div>
+                </div>
+            </li>
         </ul>
 
     </div>

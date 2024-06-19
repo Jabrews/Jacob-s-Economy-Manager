@@ -193,3 +193,14 @@ li {
  .tran-delete {
     
  }
+
+
+ /* ==================================================================== */
+
+ #word_filter {
+    display: block;
+ }
+
+ .date-filter {
+    display: block;
+ }
