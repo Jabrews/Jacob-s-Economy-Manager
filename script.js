@@ -11,9 +11,16 @@ let item_list = document.querySelector("#item-list")
 
 let word_filter = document.querySelector("#word-filter");
 let date_filter = document.querySelectorAll(".date-filter");
+let date_filter_min = document.querySelectorAll(".date-picker-min");
+let date_filter_max = document.querySelectorAll(".date-picker-max");
 
 ///TO DO:
-    // make filters work ): //add your own items
+    // get the item date text in the correct format (just for ease of access)
+    // get the input for date and make sure its full and valid
+    // once complete date is provided for both min and max send to date filter func
+    // show only items with date provided
+
+
     // make local storage for items in list and aval balance
 
 ///////////////////////////////////////////////////////
@@ -44,12 +51,10 @@ function update_balance_on_load() {
     for (let i = 0; i < item.length; i++) {
         let tran_price_div = item[i].querySelector(".tran-price")
         let value = tran_price_div.querySelector("p").textContent
-        avaliable_balance.textContent = parseInt(avaliable_balance.textContent) + parseInt(value);
+        avaliable_balance.textContent = parseInt(avaliable_balance.textContent) - parseInt(value);
 
     }
 }
-
-
 
 
 function add_new_item(e) {
@@ -172,8 +177,6 @@ function create_item_element(item_name, item_amount, item_date) {
     return li
 }
 
-////////////////////////////////////////////////////////
-
 function delete_item(e) {
     //console.log(e.target.parentElement.parentElement); //////////// trying to get correct nested element 
     if (e.target.classList.contains("tran-delete")) {
@@ -198,9 +201,47 @@ function delete_item(e) {
 }
 
 
+////////////////////////////////////////////////////////
+
+
+function filter_items_name(e) {
+    let filter_text = e.target.value.toLowerCase();
+    let item = document.querySelectorAll(".item")
+    for (let i = 0; i < item.length; i++) {
+        let tran_name_div = item[i].querySelector(".tran-name")
+        let item_name = tran_name_div.querySelector("p").textContent
+        if (item_name.indexOf(filter_text) != -1) {
+             tran_name_div.parentElement.parentElement.style.display = 'flex';
+           } else {
+            tran_name_div.parentElement.parentElement.style.display = 'none';
+        }
+
+    }
+}
+
+
+function filter_items_date_min () {
+    
+}
+
+function filter_items_date_max () {
+    
+}
+
+function filter_items_by_date() {
+
+}
+
+
+
 balance_form.addEventListener("submit", avaliable_balance_update)
 new_item_form.addEventListener("submit", add_new_item)
 item_list.addEventListener("click", delete_item)
+word_filter.addEventListener("input", filter_items_name)
+date_filter_max.addEventListener("input", filter_items_date_max);
+date_filter_min.addEventListener("input", filter_items_date_min);
+
+
 
 
 update_balance_on_load()
