@@ -11,8 +11,12 @@ let item_list = document.querySelector("#item-list")
 
 let word_filter = document.querySelector("#word-filter");
 let date_filter = document.querySelectorAll(".date-filter");
-let date_filter_min = document.querySelectorAll(".date-picker-min");
-let date_filter_max = document.querySelectorAll(".date-picker-max");
+let date_picker_min = document.querySelector(".date-picker-min");
+let date_picker_max = document.querySelector(".date-picker-max");
+
+
+let max_date 
+let min_date 
 
 ///TO DO:
     // get the item date text in the correct format (just for ease of access)
@@ -220,17 +224,68 @@ function filter_items_name(e) {
 }
 
 
-function filter_items_date_min () {
-    
+function filter_items_date_min(e) {  
+    if (e.target.value === undefined || e.target.value === "") {
+        //pass
+    } else {
+        min_date = new Date(e.target.value);
+        validate_dates("min", min_date);
+    }
 }
 
-function filter_items_date_max () {
-    
+function filter_items_date_max(e) {    
+    if (e.target.value === undefined || e.target.value === "") {
+        //pass
+    } else {
+        max_date = new Date(e.target.value);
+        validate_dates("max", max_date);
+    }
 }
 
-function filter_items_by_date() {
+function validate_dates(type, date) {
+    if (type === "max") {
+        max_date = date;
+    } else if (type === "min") {
+        min_date = date;
+    }
 
+    // Check if both dates are defined and valid
+    if (min_date && max_date) {
+        filter_items_by_date(min_date, max_date);
+    } else {
+        //pass
+    }
 }
+
+function get_items_by_date() {
+    let items = document.querySelectorAll(".item");
+    let date_divs = [];
+    for (let i = 0; i < items.length; i++) {
+        let tran_date_div = items[i].querySelector(".tran-date");
+        date_divs.push(tran_date_div);
+    }
+    return date_divs;
+}
+
+function filter_items_by_date(min_date, max_date) {
+    if (min_date < max_date) {
+        let date_divs = get_items_by_date();
+        for (let i = 0; i < date_divs.length; i++) {
+            let item_date_string = date_divs[i].querySelector("p").innerHTML;
+            let item_date = new Date(item_date_string);
+            if (item_date > min_date && item_date < max_date) {
+                date_divs[i].parentElement.parentElement.style.display = 'flex';
+
+            } else {
+                date_divs[i].parentElement.parentElement.style.display = 'none';
+            }
+
+        }
+    } else {
+        alert("must go from min to max");
+    }
+}
+
 
 
 
@@ -238,8 +293,8 @@ balance_form.addEventListener("submit", avaliable_balance_update)
 new_item_form.addEventListener("submit", add_new_item)
 item_list.addEventListener("click", delete_item)
 word_filter.addEventListener("input", filter_items_name)
-date_filter_max.addEventListener("input", filter_items_date_max);
-date_filter_min.addEventListener("input", filter_items_date_min);
+date_picker_min.addEventListener("input", filter_items_date_min);
+date_picker_max.addEventListener("input", filter_items_date_max);
 
 
 
